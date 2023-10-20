@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbshjn1jw1hno"]
+
+[ext_resource type="PackedScene" uid="uid://dlim7fdv7fifs" path="res://Scenes/Targets/target_base.tscn" id="1_4f75p"]
+[ext_resource type="Script" path="res://Scripts/Targets/plain_target.gd" id="2_1thpc"]
+[ext_resource type="PackedScene" uid="uid://cdcl37vnre56i" path="res://Resources/CollisionShapes/target_collision_shape_2d.tscn" id="2_kpqtf"]
+
+[node name="Target" instance=ExtResource("1_4f75p")]
+script = ExtResource("2_1thpc")
+
+[node name="TargetCollisionShape2D" parent="." index="1" instance=ExtResource("2_kpqtf")]

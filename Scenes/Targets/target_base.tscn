@@ -1,0 +1,59 @@
+[gd_scene load_steps=13 format=3 uid="uid://dlim7fdv7fifs"]
+
+[ext_resource type="Script" path="res://Scripts/target.gd" id="1_wb8se"]
+[ext_resource type="Texture2D" uid="uid://bp1otfql3weaq" path="res://Assets/kenney_shooting-gallery/PNG/Objects/stick_wood.png" id="2_no3rm"]
+[ext_resource type="Texture2D" uid="uid://bfnit7uyy1cxt" path="res://Assets/kenney_shooting-gallery/PNG/Objects/target_big.png" id="3_ci7oh"]
+[ext_resource type="Texture2D" uid="uid://2jg0e2we6huc" path="res://Assets/kenney_shooting-gallery/PNG/Objects/stick_wood_n.png" id="3_h7qhr"]
+[ext_resource type="Texture2D" uid="uid://b7wj62ecmc68a" path="res://Assets/kenney_shooting-gallery/PNG/Objects/shot_grey_large.png" id="4_526f3"]
+[ext_resource type="Texture2D" uid="uid://d4ereqcn6s2uv" path="res://Assets/kenney_shooting-gallery/PNG/Objects/stick_wood_s.png" id="4_oh742"]
+[ext_resource type="PackedScene" uid="uid://cbo3pj6q2ukdr" path="res://FX/shoot_particles3.tscn" id="5_x1syt"]
+[ext_resource type="AudioStream" uid="uid://bkkjchr6ecqy3" path="res://Assets/Audio/hanbaal__bottle-tink.wav" id="6_1waum"]
+[ext_resource type="Texture2D" uid="uid://c6sa213flbmib" path="res://Assets/kenney_shooting-gallery/PNG/Objects/target_big_n.png" id="6_456sl"]
+[ext_resource type="Texture2D" uid="uid://dgq2mue4muwmd" path="res://Assets/kenney_shooting-gallery/PNG/Objects/target_big_s.png" id="7_agsh7"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_0uk8d"]
+diffuse_texture = ExtResource("2_no3rm")
+normal_texture = ExtResource("3_h7qhr")
+specular_texture = ExtResource("4_oh742")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_h8uey"]
+diffuse_texture = ExtResource("3_ci7oh")
+normal_texture = ExtResource("6_456sl")
+specular_texture = ExtResource("7_agsh7")
+
+[node name="Target" type="CharacterBody2D" node_paths=PackedStringArray("bullet_hit_sprite", "target_sprite", "hit_fx", "audio_player")]
+position = Vector2(0, -75)
+scale = Vector2(0.25, 0.25)
+collision_mask = 0
+input_pickable = true
+motion_mode = 1
+script = ExtResource("1_wb8se")
+bullet_hit_sprite = NodePath("Stick/Target/Bullet")
+target_sprite = NodePath("Stick/Target")
+hit_fx = NodePath("Stick/Target/Bullet/CPUParticles2D")
+audio_player = NodePath("AudioStreamPlayer2D")
+
+[node name="Stick" type="Sprite2D" parent="."]
+position = Vector2(0, 300)
+scale = Vector2(4, 4)
+texture = SubResource("CanvasTexture_0uk8d")
+
+[node name="Target" type="Sprite2D" parent="Stick"]
+texture_filter = 4
+position = Vector2(0, -75)
+scale = Vector2(0.25, 0.25)
+texture = SubResource("CanvasTexture_h8uey")
+
+[node name="Bullet" type="Sprite2D" parent="Stick/Target"]
+visible = false
+scale = Vector2(2, 2)
+texture = ExtResource("4_526f3")
+
+[node name="CPUParticles2D" parent="Stick/Target/Bullet" instance=ExtResource("5_x1syt")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_1waum")
+volume_db = 16.0
+bus = &"MakeLoud"
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

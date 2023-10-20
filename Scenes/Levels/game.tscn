@@ -1,0 +1,983 @@
+[gd_scene load_steps=123 format=3 uid="uid://chkkfqxqeminn"]
+
+[ext_resource type="Script" path="res://Scripts/game.gd" id="1_42ti7"]
+[ext_resource type="Texture2D" uid="uid://bmjkjn1lgwk6h" path="res://Assets/kenney_shooting-gallery/PNG/Stall/bg_blue.png" id="1_lx81i"]
+[ext_resource type="Texture2D" uid="uid://cf0s8w2rjlbvj" path="res://Assets/kenney_shooting-gallery/PNG/Stall/curtain_top.png" id="2_e21ic"]
+[ext_resource type="Texture2D" uid="uid://b3ss35ryuomsu" path="res://Assets/kenney_shooting-gallery/PNG/Stall/bg_blue_n.png" id="3_wsikc"]
+[ext_resource type="Texture2D" uid="uid://cn3s8ln4r3jsf" path="res://Assets/kenney_shooting-gallery/PNG/Stall/bg_blue_s.png" id="4_5cp6y"]
+[ext_resource type="Texture2D" uid="uid://c88fongtir6nx" path="res://Assets/kenney_shooting-gallery/PNG/Stall/curtain_top-4x.png" id="5_c8574"]
+[ext_resource type="Texture2D" uid="uid://b00lbnv18kul5" path="res://Assets/kenney_shooting-gallery/PNG/Stall/curtain_top_n.png" id="6_cwvji"]
+[ext_resource type="Texture2D" uid="uid://ddx4xauyw14sw" path="res://Assets/kenney_shooting-gallery/PNG/Stall/cloud1_n.png" id="7_1cqe0"]
+[ext_resource type="Texture2D" uid="uid://735xfioe0co" path="res://Assets/kenney_shooting-gallery/PNG/Stall/curtain_top_s.png" id="7_j0rbm"]
+[ext_resource type="Texture2D" uid="uid://b1bd21hh1idy3" path="res://Assets/kenney_shooting-gallery/PNG/Stall/cloud1_s.png" id="8_r8suh"]
+[ext_resource type="Texture2D" uid="uid://btemv03yols3c" path="res://Assets/kenney_shooting-gallery/PNG/Stall/bg_wood.png" id="9_4swe7"]
+[ext_resource type="Texture2D" uid="uid://dubv385164g35" path="res://Assets/kenney_shooting-gallery/PNG/Stall/grass1-4x.png" id="9_l5hma"]
+[ext_resource type="Shader" path="res://Shaders/wind_2d.gdshader" id="9_v5x4c"]
+[ext_resource type="Texture2D" uid="uid://c4d7sp7a30qv5" path="res://Assets/kenney_shooting-gallery/PNG/Stall/grass1-4x_n.png" id="10_jdaeh"]
+[ext_resource type="Texture2D" uid="uid://dyn1g5dy7tysi" path="res://Assets/kenney_shooting-gallery/PNG/Stall/cloud2_n.png" id="11_nejua"]
+[ext_resource type="Texture2D" uid="uid://da1x537wa1t2v" path="res://Assets/kenney_shooting-gallery/PNG/Stall/grass1-4x_s.png" id="11_wnehs"]
+[ext_resource type="Texture2D" uid="uid://in6a7x0t8ofl" path="res://Assets/grass3-2x.png" id="12_6ap1h"]
+[ext_resource type="Texture2D" uid="uid://crb7vstlpyuxf" path="res://Assets/kenney_shooting-gallery/PNG/Stall/cloud2_s.png" id="12_xblwq"]
+[ext_resource type="Texture2D" uid="uid://bylbm36oj5ujs" path="res://Assets/grass3-2x_n.png" id="13_mjia0"]
+[ext_resource type="Script" path="res://Scripts/rifle.gd" id="14_7xokr"]
+[ext_resource type="Texture2D" uid="uid://crhk24nhmwjpb" path="res://Assets/grass3-2x_s.png" id="14_mm8l0"]
+[ext_resource type="Texture2D" uid="uid://batnr3x7gg56" path="res://Assets/grass1-2x.png" id="15_id262"]
+[ext_resource type="PackedScene" uid="uid://c0gj3wkhe2wci" path="res://FX/smoke_particles.tscn" id="16_0frvb"]
+[ext_resource type="Texture2D" uid="uid://dxoqbpo5pjuv5" path="res://Assets/grass1-2x_n.png" id="16_57wmk"]
+[ext_resource type="PackedScene" uid="uid://mq7ajqs50rvd" path="res://FX/shoot_particles.tscn" id="17_k3q8c"]
+[ext_resource type="Texture2D" uid="uid://b53fun27dkyv0" path="res://Assets/kenney_shooting-gallery/PNG/Stall/bg_wood_n.png" id="17_s1vuh"]
+[ext_resource type="PackedScene" uid="uid://cbshjn1jw1hno" path="res://Scenes/Targets/Children/plain.tscn" id="17_uqp0h"]
+[ext_resource type="Texture2D" uid="uid://coesjkl1vs4v" path="res://Assets/grass1-2x_s.png" id="17_yiluw"]
+[ext_resource type="Texture2D" uid="uid://crqwlxbj83ihj" path="res://Assets/grass4-2x.png" id="18_54y0w"]
+[ext_resource type="AudioStream" uid="uid://brunqbljxe1j6" path="res://Assets/Audio/strangehorizon__big_toy_gun_6.wav" id="18_76hxu"]
+[ext_resource type="PackedScene" uid="uid://4nvtiu2luipe" path="res://Scenes/Targets/Children/duck.tscn" id="18_hphps"]
+[ext_resource type="Texture2D" uid="uid://cd7ra0eca1cjp" path="res://Assets/kenney_shooting-gallery/PNG/Stall/bg_wood_s.png" id="18_okora"]
+[ext_resource type="Texture2D" uid="uid://cghob013h88cu" path="res://Assets/grass4-2x_n.png" id="19_ij33x"]
+[ext_resource type="Texture2D" uid="uid://ib0wdqeir8v7" path="res://Assets/grass4-2x_s.png" id="20_e8auh"]
+[ext_resource type="FontFile" uid="uid://bqx87glv0sn0a" path="res://Fonts/OperationNapalm.ttf" id="20_wttim"]
+[ext_resource type="Texture2D" uid="uid://8mmtrhl4yyk8" path="res://Assets/kenney_shooting-gallery/PNG/Stall/tree_pine_n.png" id="21_cotnx"]
+[ext_resource type="Texture2D" uid="uid://basvfefd03qh0" path="res://Assets/kenney_shooting-gallery/PNG/Stall/tree_oak-2x.png" id="21_ctgsw"]
+[ext_resource type="Texture2D" uid="uid://bfflngjuaxpp8" path="res://Assets/kenney_shooting-gallery/PNG/Stall/tree_pine_s.png" id="22_3828p"]
+[ext_resource type="Texture2D" uid="uid://c1drbkc52xq32" path="res://Assets/kenney_shooting-gallery/PNG/Stall/tree_oak_n.png" id="24_bede0"]
+[ext_resource type="Texture2D" uid="uid://cx2kfe2s16rmm" path="res://Assets/kenney_shooting-gallery/PNG/Stall/cloud1-2x.png" id="24_tvyc4"]
+[ext_resource type="Texture2D" uid="uid://beavq6sqnty0i" path="res://Assets/kenney_shooting-gallery/PNG/Stall/tree_oak_s.png" id="25_4irrf"]
+[ext_resource type="AudioStream" uid="uid://c2rv0amj4jwxg" path="res://Assets/Audio/Cheerful Annoyance.ogg" id="27_pg2wh"]
+[ext_resource type="Texture2D" uid="uid://do3swojo85ibc" path="res://Assets/kenney_shooting-gallery/PNG/Stall/cloud2-2x.png" id="28_87c2g"]
+[ext_resource type="Script" path="res://Scripts/Environment/cloud.gd" id="28_kwu11"]
+[ext_resource type="Texture2D" uid="uid://cxqtrnnnyixpx" path="res://Assets/kenney_shooting-gallery/PNG/HUD/icon_bullet_gold_short.png" id="29_my607"]
+[ext_resource type="Script" path="res://Scripts/input.gd" id="30_hpf03"]
+[ext_resource type="Texture2D" uid="uid://ccv2cydyf6mqa" path="res://Assets/kenney_shooting-gallery/PNG/HUD/icon_bullet_empty_short.png" id="31_chi4d"]
+[ext_resource type="Texture2D" uid="uid://c0pguuv8mqtj" path="res://Assets/kenney_shooting-gallery/PNG/Stall/tree_pine-2x.png" id="31_ya8fn"]
+[ext_resource type="Texture2D" uid="uid://v6ewj6jetqr0" path="res://Assets/kenney_shooting-gallery/PNG/Stall/water1_s.png" id="35_cbdso"]
+[ext_resource type="Texture2D" uid="uid://c0sch6k3vqnbl" path="res://Assets/kenney_shooting-gallery/PNG/Stall/curtain_rope_n.png" id="35_de8dd"]
+[ext_resource type="Texture2D" uid="uid://ctk5a8cdwgddx" path="res://Assets/kenney_shooting-gallery/PNG/Objects/rifle_n.png" id="35_hfqga"]
+[ext_resource type="Texture2D" uid="uid://dco85olrquer" path="res://Assets/kenney_shooting-gallery/PNG/Objects/rifle_red.png" id="36_jpj05"]
+[ext_resource type="Texture2D" uid="uid://dugb1x1erbh53" path="res://Assets/kenney_shooting-gallery/PNG/Stall/curtain_rope_s.png" id="36_k3ghf"]
+[ext_resource type="Texture2D" uid="uid://c45yl5d28plcv" path="res://Assets/kenney_shooting-gallery/PNG/Stall/curtain-4x.png" id="37_62ub1"]
+[ext_resource type="Texture2D" uid="uid://ccyal5il7o7bm" path="res://Assets/kenney_shooting-gallery/PNG/Stall/water2_s.png" id="37_rqa7q"]
+[ext_resource type="Texture2D" uid="uid://eegkjb1e4g1a" path="res://Assets/kenney_shooting-gallery/PNG/Stall/curtain-4x_n.png" id="38_46bpt"]
+[ext_resource type="Texture2D" uid="uid://0ha8bni2d3on" path="res://Assets/kenney_shooting-gallery/PNG/Stall/curtain-4x_s.png" id="39_xpndl"]
+[ext_resource type="Texture2D" uid="uid://eogn2q74ypoi" path="res://Assets/kenney_shooting-gallery/PNG/Stall/curtain_rope-4x.png" id="40_2envy"]
+[ext_resource type="Texture2D" uid="uid://cknp6kewke2ye" path="res://Assets/kenney_shooting-gallery/PNG/Stall/curtain_straight-4x.png" id="43_5nyb8"]
+[ext_resource type="Texture2D" uid="uid://dw5ltcervr15b" path="res://Assets/kenney_shooting-gallery/PNG/Stall/curtain_straight-4x_n.png" id="44_hqq1w"]
+[ext_resource type="Texture2D" uid="uid://dt4hhpv3r6fec" path="res://Assets/kenney_shooting-gallery/PNG/Stall/curtain_straight-4x_s.png" id="46_3deff"]
+[ext_resource type="Texture2D" uid="uid://2wm3t6cf7e3y" path="res://Assets/kenney_shooting-gallery/PNG/Objects/rifle-4x.png" id="46_3x7nk"]
+[ext_resource type="Texture2D" uid="uid://dfxqp6yf4kn6k" path="res://Assets/kenney_shooting-gallery/PNG/Stall/water1-2x.png" id="53_fj2j3"]
+[ext_resource type="Texture2D" uid="uid://bvaemagiyiey5" path="res://Assets/kenney_shooting-gallery/PNG/Stall/water1-2x_n.png" id="55_bo7a7"]
+[ext_resource type="Script" path="res://Scripts/water.gd" id="56_sgcis"]
+[ext_resource type="Texture2D" uid="uid://cmdbljjesdii2" path="res://Assets/kenney_shooting-gallery/PNG/Stall/water2-2x.png" id="59_50eay"]
+[ext_resource type="Texture2D" uid="uid://xc2cqenc3v08" path="res://Assets/kenney_shooting-gallery/PNG/Stall/water2-2x_n.png" id="61_eqqbj"]
+[ext_resource type="Texture2D" uid="uid://db5stfin8qmij" path="res://Assets/kenney_shooting-gallery/PNG/HUD/icon_bullet_gold_short_n.png" id="61_ng8us"]
+[ext_resource type="Texture2D" uid="uid://cgdbjvk4vl5ec" path="res://Assets/kenney_shooting-gallery/PNG/HUD/icon_bullet_gold_short_s.png" id="62_3b84w"]
+[ext_resource type="Script" path="res://Scripts/UI/ui.gd" id="63_2ij40"]
+[ext_resource type="Texture2D" uid="uid://uxpiymu4vthm" path="res://Assets/Particle Pack/PNG (Transparent)/circle_05.png" id="63_3o3dd"]
+[ext_resource type="Script" path="res://Scripts/UI/game_over.gd" id="66_vuwob"]
+[ext_resource type="Script" path="res://Scripts/UI/ammo_display.gd" id="67_a1ou4"]
+[ext_resource type="Texture2D" uid="uid://cwumcenhu30uc" path="res://Assets/kenney_shooting-gallery/PNG/HUD/icon_bullet_gold_short-2x.png" id="71_aye0h"]
+[ext_resource type="Texture2D" uid="uid://x6hyqalo2o6w" path="res://Assets/kenney_shooting-gallery/PNG/HUD/icon_bullet_gold_short-2x_n.png" id="72_j7ofv"]
+[ext_resource type="Script" path="res://Scripts/UI/pause_screen.gd" id="72_onay7"]
+[ext_resource type="Texture2D" uid="uid://cxlaptr0pl44u" path="res://Assets/kenney_shooting-gallery/PNG/HUD/icon_bullet_gold_short-2x_s.png" id="73_kjik0"]
+[ext_resource type="Script" path="res://Scripts/UI/ammo_regen_progress.gd" id="75_nwdn2"]
+[ext_resource type="Script" path="res://Scripts/Environment/light_sway.gd" id="80_gppk0"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_rxqg5"]
+diffuse_texture = ExtResource("1_lx81i")
+normal_texture = ExtResource("3_wsikc")
+specular_texture = ExtResource("4_5cp6y")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_h3jx2"]
+diffuse_texture = ExtResource("5_c8574")
+normal_texture = ExtResource("6_cwvji")
+specular_texture = ExtResource("7_j0rbm")
+specular_shininess = 0.1
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_t0hmw"]
+diffuse_texture = ExtResource("2_e21ic")
+normal_texture = ExtResource("6_cwvji")
+specular_texture = ExtResource("7_j0rbm")
+specular_shininess = 0.1
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_4758e"]
+diffuse_texture = ExtResource("9_l5hma")
+normal_texture = ExtResource("10_jdaeh")
+specular_texture = ExtResource("11_wnehs")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_awd6h"]
+shader = ExtResource("9_v5x4c")
+shader_parameter/speed = 1.0
+shader_parameter/minStrength = 0.179
+shader_parameter/maxStrength = 0.436
+shader_parameter/strengthScale = 100.0
+shader_parameter/interval = 3.5
+shader_parameter/detail = 3.0
+shader_parameter/distortion = 1.0
+shader_parameter/heightOffset = 0.566
+shader_parameter/offset = -100.0
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_pqgbd"]
+diffuse_texture = ExtResource("12_6ap1h")
+normal_texture = ExtResource("13_mjia0")
+specular_texture = ExtResource("14_mm8l0")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w41d4"]
+shader = ExtResource("9_v5x4c")
+shader_parameter/speed = 1.0
+shader_parameter/minStrength = 0.258
+shader_parameter/maxStrength = 0.432
+shader_parameter/strengthScale = 100.0
+shader_parameter/interval = 3.5
+shader_parameter/detail = 3.0
+shader_parameter/distortion = 1.0
+shader_parameter/heightOffset = 0.566
+shader_parameter/offset = 0.0
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_4rfdu"]
+diffuse_texture = ExtResource("15_id262")
+normal_texture = ExtResource("16_57wmk")
+specular_texture = ExtResource("17_yiluw")
+specular_shininess = 0.09
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_3sej0"]
+diffuse_texture = ExtResource("18_54y0w")
+normal_texture = ExtResource("19_ij33x")
+specular_texture = ExtResource("20_e8auh")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vv67f"]
+shader = ExtResource("9_v5x4c")
+shader_parameter/speed = 1.0
+shader_parameter/minStrength = 0.283
+shader_parameter/maxStrength = 0.316
+shader_parameter/strengthScale = 100.0
+shader_parameter/interval = 3.5
+shader_parameter/detail = 2.0
+shader_parameter/distortion = 0.0
+shader_parameter/heightOffset = 0.436
+shader_parameter/offset = 5.54
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_q5m4u"]
+diffuse_texture = ExtResource("21_ctgsw")
+normal_texture = ExtResource("24_bede0")
+specular_texture = ExtResource("25_4irrf")
+specular_shininess = 0.2
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_s0q84"]
+diffuse_texture = ExtResource("24_tvyc4")
+normal_texture = ExtResource("7_1cqe0")
+specular_texture = ExtResource("8_r8suh")
+specular_shininess = 0.25
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_eqt0k"]
+diffuse_texture = ExtResource("28_87c2g")
+normal_texture = ExtResource("11_nejua")
+specular_texture = ExtResource("12_xblwq")
+specular_shininess = 0.25
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1hh85"]
+shader = ExtResource("9_v5x4c")
+shader_parameter/speed = 1.0
+shader_parameter/minStrength = 0.283
+shader_parameter/maxStrength = 0.316
+shader_parameter/strengthScale = 100.0
+shader_parameter/interval = 3.5
+shader_parameter/detail = 2.0
+shader_parameter/distortion = 0.0
+shader_parameter/heightOffset = 0.462
+shader_parameter/offset = 5.54
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_s362k"]
+diffuse_texture = ExtResource("31_ya8fn")
+normal_texture = ExtResource("21_cotnx")
+specular_texture = ExtResource("22_3828p")
+specular_shininess = 0.23
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_8swtc"]
+diffuse_texture = ExtResource("9_4swe7")
+normal_texture = ExtResource("17_s1vuh")
+specular_texture = ExtResource("18_okora")
+specular_shininess = 0.1
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_adjrp"]
+diffuse_texture = ExtResource("37_62ub1")
+normal_texture = ExtResource("38_46bpt")
+specular_texture = ExtResource("39_xpndl")
+specular_shininess = 0.1
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_x2yn8"]
+diffuse_texture = ExtResource("40_2envy")
+normal_texture = ExtResource("35_de8dd")
+specular_texture = ExtResource("36_k3ghf")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_17rik"]
+diffuse_texture = ExtResource("43_5nyb8")
+normal_texture = ExtResource("44_hqq1w")
+specular_texture = ExtResource("46_3deff")
+specular_shininess = 0.1
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_vdlde"]
+diffuse_texture = ExtResource("46_3x7nk")
+normal_texture = ExtResource("35_hfqga")
+specular_texture = ExtResource("36_jpj05")
+specular_shininess = 0.0
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_hidae"]
+diffuse_texture = ExtResource("53_fj2j3")
+normal_texture = ExtResource("55_bo7a7")
+specular_texture = ExtResource("35_cbdso")
+texture_filter = 1
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_s8riw"]
+diffuse_texture = ExtResource("59_50eay")
+normal_texture = ExtResource("61_eqqbj")
+specular_texture = ExtResource("37_rqa7q")
+texture_filter = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o0vc6"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color(0.227451, 0.215686, 0.215686, 0.647059)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7gcog"]
+light_mode = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_ybjhb"]
+font = ExtResource("20_wttim")
+font_size = 100
+font_color = Color(0.960784, 0.854902, 0.431373, 1)
+outline_size = 15
+outline_color = Color(0.227451, 0.215686, 0.215686, 1)
+shadow_size = 20
+shadow_color = Color(0.866667, 0.898039, 0.890196, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_718ft"]
+font = ExtResource("20_wttim")
+font_size = 100
+font_color = Color(0.552941, 0.219608, 0.00392157, 1)
+outline_size = 15
+outline_color = Color(0.960784, 0.854902, 0.431373, 1)
+shadow_size = 20
+shadow_color = Color(0.227451, 0.215686, 0.215686, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2tctp"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+bg_color = Color(0.380392, 0.4, 0.4, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_72202"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+bg_color = Color(0.215686, 0.309804, 0.352941, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pbvd0"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+bg_color = Color(0.215686, 0.309804, 0.352941, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_duvgh"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.47451, 0.329412, 0.141176, 1)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(0.380392, 0.223529, 0.0666667, 1)
+border_blend = true
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+shadow_color = Color(0.733333, 0.501961, 0.266667, 1)
+shadow_size = 30
+
+[sub_resource type="Theme" id="Theme_hb3cr"]
+Button/font_sizes/font_size = 72
+Button/fonts/font = ExtResource("20_wttim")
+Button/styles/hover = SubResource("StyleBoxFlat_2tctp")
+Button/styles/normal = SubResource("StyleBoxFlat_72202")
+Button/styles/pressed = SubResource("StyleBoxFlat_pbvd0")
+HBoxContainer/constants/separation = 100
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_duvgh")
+
+[sub_resource type="LabelSettings" id="LabelSettings_8ofag"]
+font = ExtResource("20_wttim")
+font_size = 128
+font_color = Color(0.215686, 0.309804, 0.352941, 1)
+outline_size = 20
+outline_color = Color(0.552941, 0.219608, 0.00392157, 1)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_sksvu"]
+diffuse_texture = ExtResource("29_my607")
+normal_texture = ExtResource("61_ng8us")
+specular_texture = ExtResource("62_3b84w")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_y5foh"]
+diffuse_texture = ExtResource("71_aye0h")
+normal_texture = ExtResource("72_j7ofv")
+specular_texture = ExtResource("73_kjik0")
+specular_shininess = 0.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tonup"]
+bg_color = Color(0.227451, 0.215686, 0.215686, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2xt3y"]
+bg_color = Color(0.960784, 0.854902, 0.431373, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vffxn"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+bg_color = Color(0.145098, 0.443137, 0.631373, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_scinq"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+bg_color = Color(0.227451, 0.215686, 0.215686, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Theme" id="Theme_5gtad"]
+Button/colors/font_color = Color(0.890196, 0.411765, 0.0941176, 1)
+Button/colors/font_focus_color = Color(0.890196, 0.411765, 0.0941176, 1)
+Button/colors/font_hover_color = Color(0.890196, 0.411765, 0.0941176, 1)
+Button/colors/font_hover_pressed_color = Color(0.890196, 0.411765, 0.0941176, 1)
+Button/colors/font_outline_color = Color(0.227451, 0.215686, 0.215686, 1)
+Button/colors/font_pressed_color = Color(0.890196, 0.411765, 0.0941176, 1)
+Button/constants/outline_size = 10
+Button/font_sizes/font_size = 50
+Button/fonts/font = ExtResource("20_wttim")
+Button/styles/hover = SubResource("StyleBoxFlat_vffxn")
+Button/styles/normal = SubResource("StyleBoxFlat_72202")
+Button/styles/pressed = SubResource("StyleBoxFlat_scinq")
+HBoxContainer/constants/separation = 100
+
+[sub_resource type="LabelSettings" id="LabelSettings_0sjx8"]
+font = ExtResource("20_wttim")
+font_size = 128
+font_color = Color(0.552941, 0.219608, 0.00392157, 1)
+outline_size = 20
+outline_color = Color(0.227451, 0.215686, 0.215686, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_iqg10"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yfd44"]
+noise = SubResource("FastNoiseLite_iqg10")
+
+[sub_resource type="Environment" id="Environment_hq5so"]
+background_mode = 3
+background_canvas_max_layer = 1000
+tonemap_mode = 2
+tonemap_white = 3.0
+glow_hdr_threshold = 0.0
+glow_map = SubResource("NoiseTexture2D_yfd44")
+adjustment_enabled = true
+adjustment_contrast = 1.5
+adjustment_saturation = 1.2
+
+[node name="Game" type="Node2D" node_paths=PackedStringArray("ui", "ammo_display", "ammo_timer", "rifle", "game_over_screen") groups=["Game"]]
+script = ExtResource("1_42ti7")
+ui = NodePath("UI")
+ammo_display = NodePath("UI/Control/AmmoDisplay/HBoxContainer")
+ammo_timer = NodePath("AmmoTimer")
+rifle = NodePath("Foreground/Rifle")
+game_over_screen = NodePath("UI/Control/GameOverScreen")
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="SkyTop" type="Sprite2D" parent="Background"]
+light_mask = 3
+texture_repeat = 2
+position = Vector2(640, 128)
+rotation = 1.5708
+texture = SubResource("CanvasTexture_rxqg5")
+region_enabled = true
+region_rect = Rect2(0, 0, 256, 1280)
+
+[node name="CurtainTops" type="Node2D" parent="Background"]
+
+[node name="CurtainTop4" type="Sprite2D" parent="Background/CurtainTops"]
+light_mask = 3
+position = Vector2(605, 74)
+scale = Vector2(0.376, 0.376)
+texture = SubResource("CanvasTexture_h3jx2")
+
+[node name="CurtainTop3" type="Sprite2D" parent="Background/CurtainTops"]
+light_mask = 3
+position = Vector2(416, 63)
+texture = SubResource("CanvasTexture_t0hmw")
+
+[node name="CurtainTop" type="Sprite2D" parent="Background/CurtainTops"]
+light_mask = 3
+position = Vector2(274, 72)
+scale = Vector2(0.25, 0.25)
+texture = SubResource("CanvasTexture_h3jx2")
+
+[node name="CurtainTop5" type="Sprite2D" parent="Background/CurtainTops"]
+light_mask = 3
+position = Vector2(832, 83)
+scale = Vector2(0.25, 0.25)
+texture = SubResource("CanvasTexture_h3jx2")
+
+[node name="CurtainTop2" type="Sprite2D" parent="Background/CurtainTops"]
+light_mask = 3
+position = Vector2(1020, 79)
+scale = Vector2(0.25, 0.25)
+texture = SubResource("CanvasTexture_h3jx2")
+
+[node name="GrassHill1" type="Sprite2D" parent="Background"]
+light_mask = 3
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(638, 266)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("CanvasTexture_4758e")
+region_enabled = true
+region_rect = Rect2(-190, 0, 2560, 264)
+
+[node name="Grass" type="Sprite2D" parent="Background/GrassHill1"]
+light_mask = 3
+material = SubResource("ShaderMaterial_awd6h")
+position = Vector2(-318, -108)
+rotation = 0.39619
+scale = Vector2(0.5, 0.5)
+texture = SubResource("CanvasTexture_pqgbd")
+
+[node name="MiniGrass" type="Sprite2D" parent="Background/GrassHill1"]
+light_mask = 3
+material = SubResource("ShaderMaterial_w41d4")
+position = Vector2(540, -96)
+rotation = -0.326039
+scale = Vector2(0.5, 0.5)
+texture = SubResource("CanvasTexture_4rfdu")
+
+[node name="GrassGroup" type="Sprite2D" parent="Background/GrassHill1"]
+light_mask = 3
+material = SubResource("ShaderMaterial_w41d4")
+position = Vector2(118, -132)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("CanvasTexture_3sej0")
+
+[node name="GrassGroup2" type="Sprite2D" parent="Background/GrassHill1"]
+light_mask = 3
+material = SubResource("ShaderMaterial_w41d4")
+position = Vector2(786, -94)
+rotation = 0.476475
+scale = Vector2(0.5, 0.5)
+texture = SubResource("CanvasTexture_3sej0")
+flip_h = true
+
+[node name="GrassGroup3" type="Sprite2D" parent="Background/GrassHill1"]
+light_mask = 3
+material = SubResource("ShaderMaterial_w41d4")
+position = Vector2(-558, -97)
+rotation = -0.408302
+scale = Vector2(0.5, 0.5)
+texture = SubResource("CanvasTexture_3sej0")
+
+[node name="TreeOak2" type="Sprite2D" parent="Background"]
+light_mask = 3
+material = SubResource("ShaderMaterial_vv67f")
+position = Vector2(428, 163)
+scale = Vector2(0.25, 0.25)
+texture = SubResource("CanvasTexture_q5m4u")
+
+[node name="Cloud" type="Sprite2D" parent="Background"]
+light_mask = 3
+position = Vector2(334, 126)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("CanvasTexture_s0q84")
+script = ExtResource("28_kwu11")
+
+[node name="Cloud2" type="Sprite2D" parent="Background"]
+light_mask = 3
+position = Vector2(878, 141)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("CanvasTexture_eqt0k")
+script = ExtResource("28_kwu11")
+
+[node name="TreeOak" type="Sprite2D" parent="Background"]
+light_mask = 3
+material = SubResource("ShaderMaterial_vv67f")
+position = Vector2(962, 124)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("CanvasTexture_q5m4u")
+
+[node name="GrassHill2" type="Sprite2D" parent="Background"]
+light_mask = 3
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(640, 315)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("CanvasTexture_4758e")
+region_enabled = true
+region_rect = Rect2(69, 0, 2560, 264)
+
+[node name="Grass" type="Sprite2D" parent="Background/GrassHill2"]
+light_mask = 3
+material = SubResource("ShaderMaterial_awd6h")
+position = Vector2(-152, -139)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("CanvasTexture_pqgbd")
+flip_h = true
+
+[node name="Grass2" type="Sprite2D" parent="Background/GrassHill2"]
+light_mask = 3
+material = SubResource("ShaderMaterial_w41d4")
+position = Vector2(486, -106)
+rotation = 0.218969
+scale = Vector2(0.5, 0.5)
+texture = SubResource("CanvasTexture_pqgbd")
+
+[node name="MiniGrass" type="Sprite2D" parent="Background/GrassHill2"]
+light_mask = 3
+material = SubResource("ShaderMaterial_w41d4")
+position = Vector2(918, -118)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("CanvasTexture_4rfdu")
+
+[node name="MiniGrass2" type="Sprite2D" parent="Background/GrassHill2"]
+light_mask = 3
+material = SubResource("ShaderMaterial_w41d4")
+position = Vector2(-2, -68)
+rotation = 0.486131
+scale = Vector2(0.5, 0.5)
+texture = SubResource("CanvasTexture_4rfdu")
+
+[node name="MiniGrass3" type="Sprite2D" parent="Background/GrassHill2"]
+light_mask = 3
+material = SubResource("ShaderMaterial_w41d4")
+position = Vector2(-788, -92)
+rotation = -0.376426
+scale = Vector2(0.5, 0.5)
+texture = SubResource("CanvasTexture_4rfdu")
+
+[node name="GrassGroup" type="Sprite2D" parent="Background/GrassHill2"]
+light_mask = 3
+material = SubResource("ShaderMaterial_w41d4")
+position = Vector2(378, -134)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("CanvasTexture_3sej0")
+flip_h = true
+
+[node name="TreePine" type="Sprite2D" parent="Background"]
+light_mask = 3
+material = SubResource("ShaderMaterial_1hh85")
+position = Vector2(299, 159)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("CanvasTexture_s362k")
+
+[node name="Foreground" type="Node2D" parent="."]
+z_index = 50
+
+[node name="Wood" type="Sprite2D" parent="Foreground"]
+self_modulate = Color(0.839216, 0.839216, 0.839216, 1)
+texture_repeat = 2
+position = Vector2(640, 689)
+texture = SubResource("CanvasTexture_8swtc")
+region_enabled = true
+region_rect = Rect2(0, 0, 1280, 256)
+
+[node name="Curtain" type="Sprite2D" parent="Foreground"]
+light_mask = 3
+position = Vector2(-3, 0)
+scale = Vector2(0.423, 0.423)
+texture = SubResource("CanvasTexture_adjrp")
+centered = false
+
+[node name="Rope" type="Sprite2D" parent="Foreground/Curtain"]
+light_mask = 3
+position = Vector2(63.8298, 865.248)
+texture = SubResource("CanvasTexture_x2yn8")
+
+[node name="Curtain2" type="Sprite2D" parent="Foreground"]
+light_mask = 3
+position = Vector2(1061, 0)
+scale = Vector2(0.423, 0.423)
+texture = SubResource("CanvasTexture_adjrp")
+centered = false
+flip_h = true
+
+[node name="Rope" type="Sprite2D" parent="Foreground/Curtain2"]
+light_mask = 3
+position = Vector2(470.449, 860.52)
+texture = SubResource("CanvasTexture_x2yn8")
+
+[node name="CurtainTopWide" type="Sprite2D" parent="Foreground"]
+light_mask = 3
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(640, 40)
+scale = Vector2(0.25, 0.25)
+texture = SubResource("CanvasTexture_17rik")
+region_enabled = true
+region_rect = Rect2(0, 0, 5120, 320)
+
+[node name="Rifle" type="Sprite2D" parent="Foreground" node_paths=PackedStringArray("muzzle_end", "audio_player")]
+light_mask = 3
+position = Vector2(1026, 593)
+scale = Vector2(0.25, 0.25)
+texture = SubResource("CanvasTexture_vdlde")
+script = ExtResource("14_7xokr")
+muzzle_end = NodePath("MuzzleEnd")
+audio_player = NodePath("AudioStreamPlayer2D")
+smoke_fx_scene = ExtResource("16_0frvb")
+fire_fx_scene = ExtResource("17_k3q8c")
+
+[node name="MuzzleEnd" type="Marker2D" parent="Foreground/Rifle"]
+show_behind_parent = true
+position = Vector2(-256, -580)
+scale = Vector2(4, 4)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Foreground/Rifle"]
+stream = ExtResource("18_76hxu")
+bus = &"SFX"
+
+[node name="Water1" type="Sprite2D" parent="." node_paths=PackedStringArray("targets_container")]
+light_mask = 3
+texture_repeat = 2
+position = Vector2(640, 364)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("CanvasTexture_hidae")
+region_enabled = true
+region_rect = Rect2(0, 0, 2560, 256)
+script = ExtResource("56_sgcis")
+speed = 40.0
+plain_target_scene = ExtResource("17_uqp0h")
+duck_target_scene = ExtResource("18_hphps")
+targets_container = NodePath("Targets")
+
+[node name="Targets" type="Node2D" parent="Water1"]
+editor_description = "Exists to both help consolidate ducks, and to fix the scaling issues created from upscaling the water textures to be smoother"
+scale = Vector2(2, 2)
+
+[node name="Water2" type="Sprite2D" parent="." node_paths=PackedStringArray("targets_container")]
+light_mask = 3
+texture_repeat = 2
+position = Vector2(640, 443)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("CanvasTexture_s8riw")
+region_enabled = true
+region_rect = Rect2(0, 0, 2560, 264)
+script = ExtResource("56_sgcis")
+speed = 30.0
+plain_target_scene = ExtResource("17_uqp0h")
+duck_target_scene = ExtResource("18_hphps")
+targets_container = NodePath("Targets")
+
+[node name="Targets" type="Node2D" parent="Water2"]
+editor_description = "Exists to both help consolidate ducks, and to fix the scaling issues created from upscaling the water textures to be smoother"
+scale = Vector2(2, 2)
+
+[node name="Water3" type="Sprite2D" parent="." node_paths=PackedStringArray("targets_container")]
+light_mask = 3
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(640, 531)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("CanvasTexture_hidae")
+region_enabled = true
+region_rect = Rect2(0, 0, 2560, 264)
+script = ExtResource("56_sgcis")
+speed = 20.0
+plain_target_scene = ExtResource("17_uqp0h")
+duck_target_scene = ExtResource("18_hphps")
+targets_container = NodePath("Targets")
+
+[node name="Targets" type="Node2D" parent="Water3"]
+editor_description = "Exists to both help consolidate ducks, and to fix the scaling issues created from upscaling the water textures to be smoother"
+scale = Vector2(2, 2)
+
+[node name="UI" type="CanvasLayer" parent="." node_paths=PackedStringArray("score_label", "misses_label", "pause_screen")]
+layer = 0
+script = ExtResource("63_2ij40")
+score_label = NodePath("Control/MarginContainer/PanelContainer/VBoxContainer/Points")
+misses_label = NodePath("Control/MarginContainer/PanelContainer/VBoxContainer/Misses")
+pause_screen = NodePath("Control/PauseScreen")
+
+[node name="Control" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="PanelContainer" type="PanelContainer" parent="UI/Control/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_o0vc6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Control/MarginContainer/PanelContainer"]
+material = SubResource("CanvasItemMaterial_7gcog")
+layout_mode = 2
+theme_override_constants/separation = -30
+
+[node name="Points" type="Label" parent="UI/Control/MarginContainer/PanelContainer/VBoxContainer"]
+use_parent_material = true
+layout_mode = 2
+text = "00"
+label_settings = SubResource("LabelSettings_ybjhb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Misses" type="Label" parent="UI/Control/MarginContainer/PanelContainer/VBoxContainer"]
+use_parent_material = true
+layout_mode = 2
+text = "00"
+label_settings = SubResource("LabelSettings_718ft")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameOverScreen" type="PanelContainer" parent="UI/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("66_vuwob")
+
+[node name="GameOverScreen" type="PanelContainer" parent="UI/Control/GameOverScreen"]
+process_mode = 3
+custom_minimum_size = Vector2(800, 500)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_hb3cr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Control/GameOverScreen/GameOverScreen"]
+layout_mode = 2
+theme_override_constants/separation = 75
+alignment = 1
+
+[node name="Label" type="Label" parent="UI/Control/GameOverScreen/GameOverScreen/VBoxContainer"]
+layout_mode = 2
+text = "Game Over"
+label_settings = SubResource("LabelSettings_8ofag")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Control/GameOverScreen/GameOverScreen/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Quit" type="Button" parent="UI/Control/GameOverScreen/GameOverScreen/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[node name="Again" type="Button" parent="UI/Control/GameOverScreen/GameOverScreen/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Try Again?"
+
+[node name="AmmoDisplay" type="VBoxContainer" parent="UI/Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -165.0
+offset_top = -80.0
+offset_right = -40.0
+offset_bottom = -30.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Control/AmmoDisplay" node_paths=PackedStringArray("bullet_text_rects")]
+custom_minimum_size = Vector2(125, 50)
+layout_mode = 2
+alignment = 1
+script = ExtResource("67_a1ou4")
+bullet_text_rects = [NodePath("TextureRect3"), NodePath("TextureRect2"), NodePath("TextureRect")]
+bullet_texture = SubResource("CanvasTexture_sksvu")
+empty_texture = ExtResource("31_chi4d")
+
+[node name="TextureRect" type="TextureRect" parent="UI/Control/AmmoDisplay/HBoxContainer"]
+light_mask = 3
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("CanvasTexture_y5foh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="UI/Control/AmmoDisplay/HBoxContainer"]
+light_mask = 3
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("CanvasTexture_y5foh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="UI/Control/AmmoDisplay/HBoxContainer"]
+light_mask = 3
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("CanvasTexture_y5foh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ProgressBar" type="ProgressBar" parent="UI/Control/AmmoDisplay" node_paths=PackedStringArray("ammo_timer") groups=["AmmoRegenProg"]]
+visible = false
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_tonup")
+theme_override_styles/fill = SubResource("StyleBoxFlat_2xt3y")
+max_value = 1.0
+show_percentage = false
+script = ExtResource("75_nwdn2")
+ammo_timer = NodePath("../../../../AmmoTimer")
+
+[node name="PauseScreen" type="PanelContainer" parent="UI/Control"]
+process_mode = 3
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_5gtad")
+script = ExtResource("72_onay7")
+
+[node name="PanelContainer" type="PanelContainer" parent="UI/Control/PauseScreen"]
+process_mode = 3
+custom_minimum_size = Vector2(800, 500)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_duvgh")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Control/PauseScreen/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Label" type="Label" parent="UI/Control/PauseScreen/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Paused"
+label_settings = SubResource("LabelSettings_0sjx8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Menus" type="VBoxContainer" parent="UI/Control/PauseScreen/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="Resume" type="Button" parent="UI/Control/PauseScreen/PanelContainer/VBoxContainer/Menus"]
+layout_mode = 2
+text = "Resume"
+
+[node name="Options" type="Button" parent="UI/Control/PauseScreen/PanelContainer/VBoxContainer/Menus"]
+layout_mode = 2
+text = "Options"
+
+[node name="Quit" type="Button" parent="UI/Control/PauseScreen/PanelContainer/VBoxContainer/Menus"]
+layout_mode = 2
+text = "Quit"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("27_pg2wh")
+autoplay = true
+bus = &"Music"
+
+[node name="Input" type="Node" parent="."]
+process_mode = 3
+script = ExtResource("30_hpf03")
+
+[node name="AmmoTimer" type="Timer" parent="."]
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+visible = false
+rotation = -1.00705
+shadow_enabled = true
+height = 0.2
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, -300)
+shadow_color = Color(0, 0, 0, 0.321569)
+texture = ExtResource("63_3o3dd")
+texture_scale = 15.0
+height = 50.0
+script = ExtResource("80_gppk0")
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(1280, 870)
+energy = 0.38
+blend_mode = 1
+range_item_cull_mask = 2
+shadow_color = Color(0, 0, 0, 0.321569)
+texture = ExtResource("63_3o3dd")
+texture_scale = 30.0
+height = 50.0
+script = ExtResource("80_gppk0")
+current_direction = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_hq5so")
+
+[connection signal="pressed" from="UI/Control/GameOverScreen/GameOverScreen/VBoxContainer/HBoxContainer/Quit" to="UI/Control/GameOverScreen" method="_on_quit_pressed"]
+[connection signal="pressed" from="UI/Control/GameOverScreen/GameOverScreen/VBoxContainer/HBoxContainer/Again" to="UI/Control/GameOverScreen" method="_on_again_pressed"]
+[connection signal="visibility_changed" from="UI/Control/PauseScreen" to="UI/Control/PauseScreen" method="_on_visibility_changed"]
+[connection signal="pressed" from="UI/Control/PauseScreen/PanelContainer/VBoxContainer/Menus/Resume" to="UI/Control/PauseScreen" method="_on_resume_pressed"]
+[connection signal="pressed" from="UI/Control/PauseScreen/PanelContainer/VBoxContainer/Menus/Options" to="UI/Control/PauseScreen" method="_on_options_pressed"]
+[connection signal="pressed" from="UI/Control/PauseScreen/PanelContainer/VBoxContainer/Menus/Quit" to="UI/Control/PauseScreen" method="_on_quit_pressed"]
+[connection signal="timeout" from="AmmoTimer" to="." method="_on_ammo_timer_timeout"]

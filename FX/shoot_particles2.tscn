@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://db11abgbdm4av"]
+
+[ext_resource type="Texture2D" uid="uid://bs1pck6d33r47" path="res://Assets/Particle Pack/PNG (Transparent)/muzzle_02.png" id="1_ra1fy"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_n8nyh"]
+blend_mode = 4
+
+[sub_resource type="Curve" id="Curve_5vpxm"]
+max_value = 100.0
+_data = [Vector2(0, 0), 0.0, 100.0, 0, 1, Vector2(1, 100), 100.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_lqgjt"]
+max_value = 2.0
+_data = [Vector2(0, 1.08333), 0.0, 0.0, 0, 0, Vector2(1, 0.947917), 1.4, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_q74bu"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.607029, 0.872204)
+colors = PackedColorArray(1, 0.885306, 0.499118, 1, 0.2484, 0.2484, 0.2484, 0.513726)
+
+[node name="CPUParticles2D" type="CPUParticles2D"]
+show_behind_parent = true
+light_mask = 3
+material = SubResource("CanvasItemMaterial_n8nyh")
+amount = 24
+explosiveness = 0.95
+randomness = 1.0
+lifetime_randomness = 0.2
+texture = ExtResource("1_ra1fy")
+emission_shape = 1
+emission_sphere_radius = 15.0
+particle_flag_align_y = true
+direction = Vector2(-1, -1)
+spread = 20.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 150.0
+initial_velocity_max = 500.0
+damping_min = 9.675
+damping_max = 13.286
+damping_curve = SubResource("Curve_5vpxm")
+scale_amount_min = 0.1
+scale_amount_max = 0.2
+scale_amount_curve = SubResource("Curve_lqgjt")
+color_ramp = SubResource("Gradient_q74bu")

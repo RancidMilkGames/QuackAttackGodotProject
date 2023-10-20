@@ -1,0 +1,40 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Quack Attack"
+config/description="A CC0 project for Godot 4 that features "
+run/main_scene="res://Scenes/Levels/main_menu.tscn"
+config/features=PackedStringArray("4.1", "Mobile")
+boot_splash/image="res://icon.png"
+config/icon="res://Assets/kenney_shooting-gallery/PNG/HUD/icon_target.png"
+config/windows_native_icon="res://icon.ico"
+
+[audio]
+
+buses/default_bus_layout="res://Resources/default_bus_layout.tres"
+
+[autoload]
+
+Global="*res://Scenes/global.tscn"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+mouse_cursor/custom_image="res://Assets/kenney_shooting-gallery/PNG/HUD/crosshair_mixed.png"
+mouse_cursor/custom_image_hotspot=Vector2(50, 50)
+
+[rendering]
+
+renderer/rendering_method="mobile"
+anti_aliasing/screen_space_roughness_limiter/enabled=false

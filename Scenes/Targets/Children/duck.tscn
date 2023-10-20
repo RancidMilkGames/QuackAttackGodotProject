@@ -1,0 +1,42 @@
+[gd_scene load_steps=16 format=3 uid="uid://4nvtiu2luipe"]
+
+[ext_resource type="PackedScene" uid="uid://dlim7fdv7fifs" path="res://Scenes/Targets/target_base.tscn" id="1_fjgut"]
+[ext_resource type="Script" path="res://Scripts/Targets/duck_target.gd" id="2_jfwm3"]
+[ext_resource type="Texture2D" uid="uid://c68td7inbyx8f" path="res://Assets/kenney_shooting-gallery/PNG/Objects/duck-big1.png" id="2_ppmhu"]
+[ext_resource type="Texture2D" uid="uid://dl31lf8dsoxyt" path="res://Assets/kenney_shooting-gallery/PNG/Objects/duck-bigBW.png" id="3_uq4i5"]
+[ext_resource type="PackedScene" uid="uid://x3mc10xntx22" path="res://Resources/CollisionShapes/duck_collision_polygon_2d.tscn" id="3_y3spo"]
+[ext_resource type="Texture2D" uid="uid://kmms4uijdvag" path="res://Assets/kenney_shooting-gallery/PNG/Objects/duck-bigBW_n.png" id="4_i50sg"]
+[ext_resource type="Texture2D" uid="uid://dofm10li4oba7" path="res://Assets/kenney_shooting-gallery/PNG/Objects/duck-bigBW_s.png" id="5_4en78"]
+[ext_resource type="Texture2D" uid="uid://d4mdpsm766sjr" path="res://Assets/kenney_shooting-gallery/PNG/Objects/duck-big1_n.png" id="7_3folj"]
+[ext_resource type="Texture2D" uid="uid://dm62utqqn8jak" path="res://Assets/kenney_shooting-gallery/PNG/Objects/duck-big1_s.png" id="8_jabnx"]
+[ext_resource type="Texture2D" uid="uid://b7wj62ecmc68a" path="res://Assets/kenney_shooting-gallery/PNG/Objects/shot_grey_large.png" id="9_wvmef"]
+[ext_resource type="Texture2D" uid="uid://86ptjkqofcks" path="res://Assets/kenney_shooting-gallery/PNG/Objects/shot_grey_large_n.png" id="10_232p3"]
+[ext_resource type="Texture2D" uid="uid://nmdyeeobdebq" path="res://Assets/kenney_shooting-gallery/PNG/Objects/shot_grey_large_s.png" id="11_1bj75"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ay18m"]
+diffuse_texture = ExtResource("3_uq4i5")
+normal_texture = ExtResource("4_i50sg")
+specular_texture = ExtResource("5_4en78")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_kc2c6"]
+diffuse_texture = ExtResource("2_ppmhu")
+normal_texture = ExtResource("7_3folj")
+specular_texture = ExtResource("8_jabnx")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_swwe0"]
+diffuse_texture = ExtResource("9_wvmef")
+normal_texture = ExtResource("10_232p3")
+specular_texture = ExtResource("11_1bj75")
+
+[node name="Target" instance=ExtResource("1_fjgut")]
+script = ExtResource("2_jfwm3")
+duck_texture_bw = SubResource("CanvasTexture_ay18m")
+mutation_probability = Vector2(4, 7)
+
+[node name="Target" parent="Stick" index="0"]
+texture = SubResource("CanvasTexture_kc2c6")
+
+[node name="Bullet" parent="Stick/Target" index="0"]
+texture = SubResource("CanvasTexture_swwe0")
+
+[node name="CollisionPolygon2D" parent="." index="1" instance=ExtResource("3_y3spo")]

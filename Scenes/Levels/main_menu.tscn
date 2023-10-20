@@ -1,0 +1,419 @@
+[gd_scene load_steps=24 format=3 uid="uid://clclswc71b2w6"]
+
+[ext_resource type="FontFile" uid="uid://bqx87glv0sn0a" path="res://Fonts/OperationNapalm.ttf" id="1_k3pr1"]
+[ext_resource type="Texture2D" uid="uid://c68td7inbyx8f" path="res://Assets/kenney_shooting-gallery/PNG/Objects/duck-big1.png" id="2_anqu6"]
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="2_rrx2n"]
+[ext_resource type="Shader" path="res://Shaders/stars.gdshader" id="3_v2xmf"]
+[ext_resource type="Texture2D" uid="uid://d4mdpsm766sjr" path="res://Assets/kenney_shooting-gallery/PNG/Objects/duck-big1_n.png" id="4_ccoc4"]
+[ext_resource type="Texture2D" uid="uid://dm62utqqn8jak" path="res://Assets/kenney_shooting-gallery/PNG/Objects/duck-big1_s.png" id="5_ik3rc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hos2o"]
+content_margin_left = 20.0
+content_margin_top = 5.0
+content_margin_right = 20.0
+content_margin_bottom = 5.0
+bg_color = Color(0.552941, 0.219608, 0.00392157, 1)
+border_width_left = 5
+border_width_top = 5
+border_color = Color(0.996078, 0.8, 0.0235294, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 5
+shadow_color = Color(0.552941, 0.219608, 0.00392157, 1)
+shadow_size = 5
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t632v"]
+content_margin_left = 20.0
+content_margin_top = 5.0
+content_margin_right = 20.0
+content_margin_bottom = 5.0
+bg_color = Color(0.890196, 0.411765, 0.0941176, 1)
+border_width_left = 5
+border_width_top = 5
+border_color = Color(0.996078, 0.8, 0.0235294, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 5
+shadow_color = Color(0.552941, 0.219608, 0.00392157, 1)
+shadow_size = 5
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gxek7"]
+content_margin_left = 20.0
+content_margin_top = 5.0
+content_margin_right = 20.0
+content_margin_bottom = 5.0
+bg_color = Color(0.215686, 0.309804, 0.352941, 1)
+border_width_left = 5
+border_width_top = 5
+border_color = Color(0.996078, 0.8, 0.0235294, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 5
+shadow_color = Color(0.552941, 0.219608, 0.00392157, 1)
+shadow_size = 5
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="Theme" id="Theme_n1m03"]
+Button/colors/font_color = Color(0.227451, 0.215686, 0.215686, 1)
+Button/font_sizes/font_size = 72
+Button/fonts/font = ExtResource("1_k3pr1")
+Button/styles/hover = SubResource("StyleBoxFlat_hos2o")
+Button/styles/normal = SubResource("StyleBoxFlat_t632v")
+Button/styles/pressed = SubResource("StyleBoxFlat_gxek7")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5hqsr"]
+shader = ExtResource("3_v2xmf")
+shader_parameter/bg_color = null
+
+[sub_resource type="LabelSettings" id="LabelSettings_64gy3"]
+font = ExtResource("1_k3pr1")
+font_size = 128
+font_color = Color(0.890196, 0.411765, 0.0941176, 1)
+outline_size = 10
+outline_color = Color(0, 1, 1, 1)
+shadow_size = 10
+shadow_color = Color(0.890196, 0.411765, 0.0941176, 1)
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="Animation" id="Animation_6gti8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect/HBoxContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 650)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect/HBoxContainer:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_xkqce"]
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect/Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 50), Vector2(-2, 50), Vector2(2, 50), Vector2(0, 50)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect/Label:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.00872665, 0.00872665, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_umm1y"]
+resource_name = "Shake_2"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect/HBoxContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 650), Vector2(-2, 650), Vector2(2, 650), Vector2(0, 650)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect/HBoxContainer:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.00872665, 0.00872665, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8ll5g"]
+_data = {
+"RESET": SubResource("Animation_6gti8"),
+"Shake": SubResource("Animation_xkqce"),
+"Shake_2": SubResource("Animation_umm1y")
+}
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_gi0ft"]
+diffuse_texture = ExtResource("2_anqu6")
+normal_texture = ExtResource("4_ccoc4")
+specular_texture = ExtResource("5_ik3rc")
+
+[sub_resource type="LabelSettings" id="LabelSettings_thmlk"]
+font = ExtResource("1_k3pr1")
+font_size = 32
+font_color = Color(0.960784, 0.854902, 0.431373, 1)
+
+[sub_resource type="Shader" id="Shader_4tncw"]
+code = "shader_type canvas_item;
+
+uniform sampler2D refraction_map;
+
+uniform vec2 refraction_stretch = vec2(1.0, 1.0);
+uniform float refraction_strength : hint_range(0.0, 0.1) = 0.02;
+
+uniform vec4 water_tint : source_color = vec4(0.2, 0.6, 1.0, 0.1);
+uniform float speed : hint_range(0.0, 1.0) = 0.1;
+
+uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
+
+varying vec2 globalposition;
+void vertex(){
+	globalposition = (MODEL_MATRIX * vec4(VERTEX, 0.0, 1.0)).xy;
+}
+
+
+void fragment()
+{
+	vec2 uv = globalposition / 512.0;
+	
+	vec2 refraction_offset = texture(
+		refraction_map, 
+		vec2(
+			mod(uv.x * refraction_stretch.x + TIME * speed, 1.0), 
+			mod(uv.y * refraction_stretch.y + TIME * speed, 1.0))).xy;
+	// Set values between -0.5 and 0.5 (instead of 0 and 1). Otherwise the reflection will move whith increased refraction_strength
+	refraction_offset -= 0.5; 
+	
+	// Get the screen texture and distort it
+	vec4 refraction = texture(SCREEN_TEXTURE, SCREEN_UV - refraction_offset * refraction_strength);
+	
+	vec4 color = vec4(1.0);
+	
+	color.rgb = mix(refraction.rgb, water_tint.rgb, water_tint.a);
+	COLOR = color;
+}"
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_4my7k"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_cnjcd"]
+noise = SubResource("FastNoiseLite_4my7k")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_27y14"]
+shader = SubResource("Shader_4tncw")
+shader_parameter/refraction_stretch = Vector2(1, 1)
+shader_parameter/refraction_strength = 0.003
+shader_parameter/water_tint = Color(0, 0, 0, 0.270588)
+shader_parameter/speed = 0.145
+shader_parameter/refraction_map = SubResource("NoiseTexture2D_cnjcd")
+
+[sub_resource type="Environment" id="Environment_3ij5k"]
+background_mode = 3
+background_canvas_max_layer = 2
+tonemap_mode = 2
+glow_intensity = 8.0
+glow_strength = 1.26
+
+[node name="MainMenu" type="Control" node_paths=PackedStringArray("score_label", "exit")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_n1m03")
+script = ExtResource("2_rrx2n")
+score_label = NodePath("ColorRect/HBoxContainer/Score")
+exit = NodePath("ColorRect/VBoxContainer/Exit")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_5hqsr")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.227451, 0.215686, 0.215686, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 1.88457
+offset_top = 50.0
+offset_right = 1.88452
+offset_bottom = 200.0
+grow_horizontal = 2
+rotation = 0.00822298
+pivot_offset = Vector2(640, 75)
+text = "Quack Attack"
+label_settings = SubResource("LabelSettings_64gy3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect/Label"]
+root_node = NodePath("../../..")
+speed_scale = 5.0
+libraries = {
+"": SubResource("AnimationLibrary_8ll5g")
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -110.0
+offset_right = 250.0
+offset_bottom = 219.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(250, 143)
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Play" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Spacer" type="Control" parent="ColorRect/VBoxContainer/Play"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="ColorRect/VBoxContainer/Play"]
+layout_mode = 2
+text = "Play"
+
+[node name="Options" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Spacer" type="Control" parent="ColorRect/VBoxContainer/Options"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="ColorRect/VBoxContainer/Options"]
+layout_mode = 2
+text = "Options"
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/VBoxContainer/Options/Button"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -149.0
+offset_right = 172.0
+offset_bottom = -1.0
+texture = SubResource("CanvasTexture_gi0ft")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Spacer2" type="Control" parent="ColorRect/VBoxContainer/Options"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Exit" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="ColorRect/VBoxContainer/Exit"]
+layout_mode = 2
+text = "Exit"
+
+[node name="Spacer" type="Control" parent="ColorRect/VBoxContainer/Exit"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 650.0
+offset_right = 20480.0
+offset_bottom = 690.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(640, 650)
+alignment = 1
+
+[node name="Label" type="Label" parent="ColorRect/HBoxContainer"]
+layout_mode = 2
+text = "High Score: "
+label_settings = SubResource("LabelSettings_thmlk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score" type="Label" parent="ColorRect/HBoxContainer"]
+layout_mode = 2
+text = "00"
+label_settings = SubResource("LabelSettings_thmlk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect/HBoxContainer"]
+root_node = NodePath("../../..")
+speed_scale = 5.0
+libraries = {
+"": SubResource("AnimationLibrary_8ll5g")
+}
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect"]
+material = SubResource("ShaderMaterial_27y14")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_3ij5k")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(632, 367)
+color = Color(0.890196, 0.411765, 0.0941176, 1)
+texture_scale = 1.46
+height = 10.0
+
+[connection signal="pressed" from="ColorRect/VBoxContainer/Play/Button" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/Options/Button" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/Exit/Button" to="." method="_on_quit_pressed"]
